@@ -1,12 +1,13 @@
-import time
-
-timestamp=(time.strftime("%H:%M"))
-a=int(time.strftime("%H"))
-if a>12 and a<17 :
-    print(f"The current time is {timestamp}, Good afternoon!")
-elif a>17 or a==17:
-    print(f"the current time is {timestamp},good evenining!")
-else:
-    print("goodmorning!")
-
+def temp(a):
+    if a=="F":
+        f=int(input("Enter the temperatue:"))
+        c=(f-32)*(5/9)
+        print(f"In Fahrenheit {f} In Celsius {c}")
+        
+    else:
+        c=int(input("enter the temperature:"))
+        f=(c*(9/5)+32)
+        print(f"In Fahrenheit {f} In Celsius {c}")
+a=input("Enter the unit: ")
+temp(a)
     
