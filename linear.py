@@ -9,8 +9,7 @@ def loss(m, b, points):
         x = points.iloc[i].YearsExperience
         y = points.iloc[i].Salary
         total_error += (y - (m*x + b))**2
-    return total_error / float(len(points))  # ✓ Added return
-
+    return total_error / float(len(points))  
 def gradient_descent(m_now, b_now, points, L):
     m_gradient = 0
     b_gradient = 0
@@ -24,7 +23,7 @@ def gradient_descent(m_now, b_now, points, L):
 
     m = m_now - m_gradient * L
     b = b_now - b_gradient * L
-    return m, b  # ✓ Moved outside loop
+    return m, b  
 
 m = 0
 b = 0
