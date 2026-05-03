@@ -28,7 +28,7 @@ def gradient_descent(m_now, b_now, points, L):
 m = 0
 b = 0
 L = 0.0001
-epochs = 300
+epochs = 500
 
 for i in range(epochs):
     if i % 50 == 0:
@@ -38,7 +38,7 @@ for i in range(epochs):
 print(f"Final m: {m}, Final b: {b}")
 
 plt.scatter(data.YearsExperience, data.Salary, color="black")
-plt.plot(list(range(0, 30)), [m*x + b for x in range(0, 30)], color="red")
+plt.plot(list(range(0, 30)), [m*x + b for x in range(0, 30)], color="green")
 plt.xlabel("Years Experience")
 plt.ylabel("Salary")
 plt.show()
