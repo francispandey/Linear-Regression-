@@ -3,13 +3,7 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv("Salary_dataset.csv")
 
-def loss(m, b, points):
-    total_error = 0
-    for i in range(len(points)):
-        x = points.iloc[i].YearsExperience
-        y = points.iloc[i].Salary
-        total_error += (y - (m*x + b))**2
-    return total_error / float(len(points))  
+
 def gradient_descent(m_now, b_now, points, L):
     m_gradient = 0
     b_gradient = 0
@@ -24,7 +18,7 @@ def gradient_descent(m_now, b_now, points, L):
     m = m_now - m_gradient * L
     b = b_now - b_gradient * L
     return m, b  
-
+ 
 m = 0
 b = 0
 L = 0.0001
@@ -38,7 +32,7 @@ for i in range(epochs):
 print(f"Final m: {m}, Final b: {b}")
 
 plt.scatter(data.YearsExperience, data.Salary, color="black")
-plt.plot(list(range(0, 30)), [m*x + b for x in range(0, 30)], color="green")
+plt.plot(list(range(0, 20)), [m*x + b for x in range(0, 20)], color="green")
 plt.xlabel("Years Experience")
 plt.ylabel("Salary")
 plt.show()
